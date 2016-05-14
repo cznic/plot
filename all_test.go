@@ -261,6 +261,17 @@ print ""
 	}
 }
 
+func trim(s []byte) []byte {
+	for {
+		switch s[0] {
+		case '\n', '\f':
+			s = s[1:]
+		default:
+			return s
+		}
+	}
+}
+
 func Example_script() {
 	const src = `
 set term dumb
@@ -273,13 +284,13 @@ plot [-5:6.5] -sin(x/2) with impulse ls -1
 		panic(err)
 	}
 
-	fmt.Printf("%s\n", out)
+	fmt.Printf("%s\n", trim(out))
 	// Output:
 	// set term dumb
 	// plot [-5:6.5] -sin(x/2) with impulse ls -1
-	// 
-	// 
-	// 
+	//
+	//
+	//
 	//     1 ++----+-----------+-----------+-----------+-----------+-----------+-++
 	//       |    +++||||||||+++           +           +         -sin(x/2) +---++ |
 	//   0.8 ++ ++|||||||||||||+++                                               ++
@@ -317,13 +328,13 @@ func Example_file() {
 		panic(err)
 	}
 
-	fmt.Printf("%s\n", out)
+	fmt.Printf("%s\n", trim(out))
 	// Output:
 	// set term dumb
 	// plot [-5:6.5] sin(x) with impulse ls -1
-	// 
-	// 
-	// 
+	//
+	//
+	//
 	//     1 ++----+-----------+-----------+-----------+-----------+-----------+-++
 	//       ||||+++           +           +     ++||||++          +sin(x) +---++ |
 	//   0.8 ++||||+                             +|||||||                        ++
