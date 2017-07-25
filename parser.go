@@ -15872,7 +15872,7 @@ yynewstate:
 		__yyfmt__.Printf("state stack %v\n", a)
 	}
 	row := yyParseTab[yystate]
-retry:
+	retry:
 	yyn = 0
 	if yyxchar < len(row) {
 		if yyn = int(row[yyxchar]); yyn != 0 {
@@ -15899,6 +15899,7 @@ retry:
 		}
 		goto ret0
 	}
+
 
 	if yyn == 0 && yychar0 == IDENTIFIER {
 		yychar = IDENTIFIER

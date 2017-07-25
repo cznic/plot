@@ -147,7 +147,7 @@ func goyacc(y string) (err error) {
 	cmd := exec.Command("goyacc", "-c", "-o", os.DevNull, "-xegen", t.Name(), y)
 	if out, err := cmd.CombinedOutput(); err != nil {
 		log.Printf("%s\n", out)
-		log.Printf("(To install goyacc: $ go get github.com/cznic/yy)")
+		log.Printf("(To install goyacc: $ go get github.com/cznic/goyacc)")
 		return err
 	}
 
