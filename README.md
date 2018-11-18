@@ -1,10 +1,5 @@
-# plot
+`github.com/cznic/plot` has moved to [`modernc.org/plot`](https://godoc.org/modernc.org/plot) ([vcs](https://gitlab.com/cznic/plot)).
 
-Package plot wraps Gnuplot, the portable command-line driven graphing utility
-for Linux, OS/2, MS Windows, OSX, VMS, and many other platforms.
+Please update your import paths to `modernc.org/plot`.
 
-Installation
-
-    $ go get github.com/cznic/plot
-
-Documentation: [godoc.org/github.com/cznic/plot](http://godoc.org/github.com/cznic/plot)
+This repo is now archived.
